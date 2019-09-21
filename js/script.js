@@ -19,6 +19,11 @@ const titleClickHandler = function(){
 
   /* add class 'active' to the clicked link */
 
+  const clickedElement = this;
+    console.log('clickedElement:', clickedElement);
+    console.log('clickedElement (with plus): ' + clickedElement)
+    clickedElement.classList.add('active');
+
   /* remove class 'active' from all articles */
 
   const activeArticles = document.querySelectorAll('.posts .active');

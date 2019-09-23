@@ -1,9 +1,6 @@
 'user strict';
 
- /*document.getElementById('test-button').addEventListener('click', function(){
-  const links = document.querySelectorAll('.titles a');
-  console.log('links:', links);
-}); */
+/* title click handler function */
 
 const titleClickHandler = function(){
   console.log('Link was clicked!');
@@ -45,14 +42,10 @@ const titleClickHandler = function(){
   /* add class 'active' to the correct article */
 
   targetArticle.classList.add('active');
-    console.log("active: " , targetArticle);
+    console.log('active: ', targetArticle);
 }
 
-const links = document.querySelectorAll('.titles a');
-
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
-}
+/* title links generator function */
 
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
@@ -68,6 +61,8 @@ function generateTitleLinks(){
 
   /* for each article */
 
+  let html = '';
+
   const articles = document.querySelectorAll(optArticleSelector);
     for(let article of articles){
 
@@ -78,20 +73,33 @@ function generateTitleLinks(){
 
     /* find the title element */
 
-    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
-      console.log('articleTitle ', articleTitle);
+    const titleElement = article.querySelector('.post-title');
+      console.log('titleElement ', titleElement);
 
     /* get the title from the title element */
 
-
+    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+      console.log('articleTitle ', articleTitle);
 
     /* create HTML of the link */
 
+    const linkHTML = '<li><a href="#' + articleId + '"><span>' +  articleTitle + '</span></a></li>';
+      console.log('linkHTML: ', linkHTML);
+
     /* insert link into titleList */
 
+      html = html + linkHTML;
 
     }
-
+  titleList.innerHTML = html;
+    console.log('html: ', html);
 }
 
 generateTitleLinks();
+
+const links = document.querySelectorAll('.titles a');
+
+for(let link of links){
+  link.addEventListener('click', titleClickHandler);
+}
+  console.log('links: ', links);

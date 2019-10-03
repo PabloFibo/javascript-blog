@@ -20,7 +20,7 @@ body {
   font-family: $font-text;
   color: $color-dark;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 56px;
   line-height: 1.7;
 }
 
@@ -121,8 +121,15 @@ body {
 
 /* tag size */
 
-.tags {
+.sidebar .tags li {
+  text-decoration: none;
+  list-style-type: none;
+
   ul {
     display: inline-block;
   }
+}
+
+.tag-size-1 {
+  font-size: 15px;
 }

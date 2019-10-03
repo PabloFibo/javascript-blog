@@ -82,15 +82,15 @@ function generateTitleLinks(customSelector = '') {
   }
   titleList.innerHTML = html;
   console.log('html: ', html);
+
+  const links = document.querySelectorAll('.titles a');
+  for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
+  }
+  console.log('links: ', links);
 }
 
 generateTitleLinks();
-
-const links = document.querySelectorAll('.titles a');
-for (let link of links) {
-  link.addEventListener('click', titleClickHandler);
-}
-console.log('links: ', links);
 
 /* min and max calculation function */
 function calculateTagsParams(tags) {
@@ -184,15 +184,15 @@ function generateTags() {
   /* [NEW] add html from allTagsHTML to tagList */
   tagList.innerHTML = allTagsHTML;
   console.log('allTagsHTML:',allTagsHTML);
+
+  const tagsLinks = document.querySelectorAll('.list .list-horizontal');
+  console.log('tagsLinks: ', tagsLinks);
+  for (let link of tagsLinks) {
+    link.addEventListener('click', titleClickHandler);
+  }
 }
 
 generateTags();
-
-const tagsLinks = document.querySelectorAll('.list .list-horizontal');
-console.log('tagsLinks: ', tagsLinks);
-for (let link of tagsLinks) {
-  link.addEventListener('click', titleClickHandler);
-}
 
 function tagClickHandler(event) {
   /* prevent default action for this event */
@@ -283,14 +283,14 @@ function generateAuthors() {
   const articles = document.querySelectorAll(optArticleSelector);       // .post
   console.log('articles: ', articles);
 
-  /* make html variable with empty string */
-  let html = '';
-
   /* START LOOP: find authors for article */
   for (let article of articles) {
     /* find author for article */
     const authorElement = article.querySelector(optArticleAuthorSelector);  // .post-author
     console.log('authorElement: ', authorElement);
+
+    /* make html variable with empty string */
+    let html = '';
 
     /* get attribute for author */
     const author = article.getAttribute('data-author');
@@ -309,7 +309,6 @@ function generateAuthors() {
       allAuthors[author]++;
     }
     /* generate link of HTML */
-
     authorElement.innerHTML = html;
   }
   /* [NEW] find list of authors in right column */

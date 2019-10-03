@@ -107,4 +107,9 @@ body {
 .post-tags p {
   margin: 0 10px 0 0;
 }
+
+/* tag size */
+.tags ul {
+  display: inline-block;
+}
 /*# sourceMappingURL=style.css.map */

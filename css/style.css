@@ -109,7 +109,16 @@ body {
 }
 
 /* tag size */
-.tags ul {
+.sidebar .tags li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.sidebar .tags li ul {
   display: inline-block;
+}
+
+.tag-size-1 {
+  font-size: 15px;
 }
 /*# sourceMappingURL=style.css.map */

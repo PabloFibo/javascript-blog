@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
 /* Variables */
 /* Global */
-*, *::before, *::after {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -49,7 +51,8 @@ body {
       flex: 2 0 0;
 }
 
-.sidebar, .posts {
+.posts,
+.sidebar {
   background: #fff;
   margin-right: 10px;
   padding: 40px;
@@ -73,17 +76,44 @@ body {
   padding: 0;
 }
 
+.list a {
+  text-decoration: none;
+}
+
 .list .active {
   font-weight: bold;
 }
 
+.list-horizontal {
+  font-size: 16px;
+}
+
+.list-horizontal a {
+  color: #44bd32;
+}
+
 .list-horizontal li {
   display: inline-block;
+  font-weight: bold;
 }
 
 /* Authors */
+.authors {
+  background-color: #f5f6fa;
+  border-style: double;
+  border-radius: 7%;
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+.authors a {
+  font-weight: 550;
+  color: #0097e6;
+}
+
 .authors li {
   margin-bottom: 12px;
+  padding: 6px 0;
 }
 
 /* Post */
@@ -93,10 +123,36 @@ body {
 
 .post.active {
   display: block;
+  color: green;
+}
+
+.posts {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 7%;
+  background-color: #f1f2f6;
+}
+
+.post-content {
+  color: black;
+}
+
+.post-title {
+  font-size: 30px;
+  color: black;
+  text-shadow: 2px 2px 2px green;
 }
 
 .post-author {
   font-style: italic;
+  list-style-type: none;
+  font-weight: bold;
+}
+
+.post-author a {
+  text-decoration: none;
+  color: #0097e6;
+  padding-left: 20px;
 }
 
 .post-tags {
@@ -105,20 +161,55 @@ body {
 }
 
 .post-tags p {
+  color: #487eb0;
   margin: 0 10px 0 0;
 }
 
+/* sidebars */
+.sidebar {
+  background-color: #dcdde1;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 7%;
+}
+
+.sidebar .titles {
+  padding-left: 20px;
+  background-color: #f5f6fa;
+  border-style: double;
+  border-radius: 7%;
+  font-size: 18px;
+}
+
+.sidebar .titles a {
+  font-weight: 700;
+  color: #353b48;
+}
+
+.sidebar .titles .active {
+  color: green;
+  text-decoration: underline;
+}
+
 /* tag size */
-.sidebar .tags li {
-  text-decoration: none;
-  list-style-type: none;
-}
-
-.sidebar .tags li ul {
-  display: inline-block;
-}
-
-.tag-size-1 {
+.sidebar .tags {
+  padding-left: 20px;
+  background-color: #f5f6fa;
+  border-style: double;
+  border-radius: 7%;
   font-size: 15px;
+}
+
+.sidebar .tags a {
+  color: #44bd32;
+  font-weight: 550;
+}
+
+.sidebar .tags li {
+  padding: 6px 0;
+}
+
+.tags .active {
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

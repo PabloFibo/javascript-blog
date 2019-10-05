@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext');
-/* Variables */
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext'); /* Variables */
 $color-light: #fff;
 $color-dark: #444;
 $font-logo: 'Sacramento', cursive;
@@ -85,15 +84,18 @@ body {
 
 .list-horizontal {
   font-size: 16px;
+  font-weight: 400;
+
+  .active {
+    text-decoration: underline;
+  }
+
   a {
     color: #44bd32;
-
   }
 
   li {
     display: inline-block;
-    font-weight: bold;
-
   }
 }
 /* Authors */
@@ -139,7 +141,6 @@ body {
   font-size: 30px;
   color: black;
   text-shadow: 2px 2px 2px green;
-
 }
 
 .post-author {
@@ -200,11 +201,35 @@ body {
     font-weight: 550;
   }
 
+  .active {
+    font-weight: bold;
+  }
+
   li {
     padding: 6px 0;
   }
 }
 
-.tags .active  {
-    font-weight: bold;
+.tag-size-6 {
+  font-size: 25px;
+}
+
+.tag-size-5 {
+  font-size: 22px;
+}
+
+.tag-size-4 {
+  font-size: 20px;
+}
+
+.tag-size-3 {
+  font-size: 17px;
+}
+
+.tag-size-2 {
+  font-size: 15px;
+}
+
+.tag-size-1 {
+  font-size: 13px;
 }

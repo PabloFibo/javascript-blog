@@ -86,6 +86,11 @@ body {
 
 .list-horizontal {
   font-size: 16px;
+  font-weight: 400;
+}
+
+.list-horizontal .active {
+  text-decoration: underline;
 }
 
 .list-horizontal a {
@@ -94,7 +99,6 @@ body {
 
 .list-horizontal li {
   display: inline-block;
-  font-weight: bold;
 }
 
 /* Authors */
@@ -205,11 +209,35 @@ body {
   font-weight: 550;
 }
 
+.sidebar .tags .active {
+  font-weight: bold;
+}
+
 .sidebar .tags li {
   padding: 6px 0;
 }
 
-.tags .active {
-  font-weight: bold;
+.tag-size-6 {
+  font-size: 25px;
+}
+
+.tag-size-5 {
+  font-size: 22px;
+}
+
+.tag-size-4 {
+  font-size: 20px;
+}
+
+.tag-size-3 {
+  font-size: 17px;
+}
+
+.tag-size-2 {
+  font-size: 15px;
+}
+
+.tag-size-1 {
+  font-size: 13px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -51,16 +51,13 @@ function generateTitleLinks(customSelector = '') {
   for (let article of articles) {
     const articleId = article.getAttribute('id');
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
-
     const linkHTMLData = {
       id: articleId,
       title: articleTitle
     };
-
     const linkHTML = templates.articleLink(linkHTMLData);
     html = html + linkHTML;
   }
-
   titleList.innerHTML = html;
   const links = document.querySelectorAll('.titles a');
 
@@ -113,6 +110,7 @@ function generateTags() {
 
       const tagsHTML = templates.tagLink(tagsHTMLData);
       html = html + ' ' + tagsHTML;
+
       if (!allTags.hasOwnProperty(tag)) {
         allTags[tag] = 1;
       } else {
@@ -121,6 +119,7 @@ function generateTags() {
     }
     tagsWrapper.innerHTML = html;
   }
+
   const tagList = document.querySelector(optTagsListSelector); // .tags
   const tagsParams = calculateTagsParams(allTags);
   let allTagsData = {
@@ -128,7 +127,6 @@ function generateTags() {
   };
 
   for (let tag in allTags) {
-    //const tagLinkHTML = '<li><a class=' + calculateTagClass(allTags[tag], tagsParams) + ' href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
     allTagsData.tags.push({
       tag: tag,
       count: allTags[tag],
@@ -160,7 +158,7 @@ function tagClickHandler(event) {
     activeTag.classList.remove('active');
   }
 
-  const tagLink = document.querySelectorAll('a[href^="#tag-"]');
+  const tagLink = document.querySelectorAll('a[href^="' + href + '"]');
 
   for (let linkTag of tagLink) {
     linkTag.classList.add('active');
@@ -210,12 +208,10 @@ function generateAuthors() {
     const authorElement = article.querySelector(optArticleAuthorSelector); // .post-author
     let html = '';
     const author = article.getAttribute('data-author');
-
     const authorHTMLData = {
       id: author,
       title: author
     };
-
     const linkHTML = templates.authorLink(authorHTMLData);
     html = html + linkHTML;
 
